@@ -6,7 +6,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC, LinearSVC
 
 digits = load_digits()
+type(digits)
+digits.DESCR
 type(digits.data)
+type(digits.target)
 digits.data.shape
 x_train, x_test, y_train, y_test = train_test_split(digits.data, digits.target, test_size=0.25, random_state=33)
 type(x_test)

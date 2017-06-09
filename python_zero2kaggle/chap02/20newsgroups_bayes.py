@@ -10,7 +10,9 @@ import numpy as np
 #######默认下载保存路径：C:\Users\Administrator\scikit_learn_data
 #######所以运行时会很长一段时间没有反应，是正常的
 news = fetch_20newsgroups(subset='all')
+type(news.target)
 len(news.data)
+news.target.shape
 print news.data[0]
 type(news.data)
 x_train, x_test, y_train, y_test = train_test_split(news.data, news.target, test_size=0.25, random_state=33)
