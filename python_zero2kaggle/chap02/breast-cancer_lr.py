@@ -31,8 +31,8 @@ sgd = SGDClassifier()
 sgd.fit(x_train, y_train)
 y_predict2 = sgd.predict(x_test)
 
-print lr.score(x_test, y_test)
-print classification_report(y_test, y_predict2)
+print(lr.score(x_test, y_test))
+print(classification_report(y_test, y_predict2))
 sgd.score(x_test, y_test)
 y_predict1.shape
 y_test.shape
@@ -41,7 +41,7 @@ y_predict1[y_predict1 <= 3] = 2
 y_predict1[y_predict1 > 3] = 4
 y_predict1.shape
 y_predict2
-print classification_report(y_test, y_predict1, target_names=['Benign', 'Malignant'])
+print(classification_report(y_test, y_predict1, target_names=['Benign', 'Malignant']))
 ls = RandomForestClassifier()
 ls.fit(x_train, y_train)
 ls.feature_importances_119

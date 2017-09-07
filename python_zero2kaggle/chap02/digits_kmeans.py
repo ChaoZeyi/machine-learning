@@ -21,5 +21,5 @@ km.n_clusters
 km.fit(x_train)
 y_predict = km.predict(x_test)
 y_predict
-print adjusted_rand_score(y_test, y_predict)
-print silhouette_score(x_test, y_predict)
+print(adjusted_rand_score(y_test, y_predict))
+print(silhouette_score(x_test, y_predict))

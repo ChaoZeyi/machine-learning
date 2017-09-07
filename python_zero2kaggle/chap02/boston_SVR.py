@@ -6,7 +6,7 @@ from sklearn.svm import SVR, LinearSVR
 
 boston = load_boston()
 type(boston)
-print boston.DESCR
+print(boston.DESCR)
 
 type(boston.data)
 type(boston.target)
@@ -25,13 +25,13 @@ svr.fit(x_train, y_train)
 svr.score(x_test, y_test)
 y_predict = svr.predict(x_test)
 
-print mean_squared_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict))
-print mean_absolute_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict))
+print(mean_squared_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict)))
+print(mean_absolute_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict)))
 
 lsvr = LinearSVR()
 lsvr.fit(x_train, y_train)
 lsvr.score(x_test, y_test)
 y_predict1 = lsvr.predict(x_test)
 
-print mean_squared_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict1))
-print mean_absolute_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict1))
+print(mean_squared_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict1)))
+print(mean_absolute_error(ss.inverse_transform(y_test), ss.inverse_transform(y_predict1)))

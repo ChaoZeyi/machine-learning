@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.cross_validation import train_test_split
+from sklearn.metrics import classification_report
 
 titanic = pd.read_csv("F:/github/kaggle/Titanic/dataSets/train.csv")
 
@@ -29,7 +30,7 @@ x_test = ss.transform(x_test)
 
 dt = DecisionTreeClassifier()
 dt.fit(x_train, y_train)
-print dt.score(x_test, y_test)
+print(dt.score(x_test, y_test))
 y_predict = dt.predict(x_test)
-print classification_report(y_test, y_predict)
-print dt.feature_importances_
+print(classification_report(y_test, y_predict))
+print(dt.feature_importances_)

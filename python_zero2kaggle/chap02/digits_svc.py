@@ -25,7 +25,7 @@ lsvc = LinearSVC()
 lsvc.fit(x_train, y_train)
 lsvc.score(x_test, y_test)
 y_predict = lsvc.predict(x_test)
-print classification_report(y_test, y_predict)
+print(classification_report(y_test, y_predict))
 
 
 svc = SVC()
