@@ -1,7 +1,19 @@
 # machine-learning   
-make notes for maching learning!    
-包括一些参考书籍、资料，以及对应的习题解答代码    
-还有一些自己的练习代码和总结、需要注意的地方！
+make notes for maching learning! 
+
+### 公开课程
+
+**Coursera — 机器学习（Machine Learning） **
+
+授课：Andrew Ng
+
+https://www.coursera.org/learn/machine-learning#syllabus
+
+**Coursera — 机器学习神经网络（Neural Networks for Machine Learning）**
+
+授课：Geoffrey Hinton
+
+https://www.coursera.org/learn/neural-networks
 
 
 
