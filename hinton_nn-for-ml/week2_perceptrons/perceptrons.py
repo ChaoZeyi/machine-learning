@@ -1,14 +1,13 @@
 from functools import reduce
-import numpy as np
+from numpy import dot,array
 class Perceptron(object):
     def __init__(self, input_num, activator):
         '''
         初始化感知器，设置输入参数的个数，以及激活函数。
-        激活函数的类型为double -> double
         '''
         self.activator = activator
         # 权重向量初始化为0
-        self.weights = np.zeros((input_num,1))
+        self.weights = array([0.0,0.0])
         # 偏置项初始化为0
         self.bias = 0.0
     def __str__(self):
@@ -20,11 +19,7 @@ class Perceptron(object):
         '''
         输入向量，输出感知器的计算结果
         '''
-        # 把input_vec[x1,x2,x3...]和weights[w1,w2,w3,...]打包在一起
-        # 变成[(x1,w1),(x2,w2),(x3,w3),...]
-        # 然后利用map函数计算[x1*w1, x2*w2, x3*w3]
-        # 最后利用reduce求和
-        out = input_vec.dot(self.weights) + self.bias
+        out = dot(input_vec,self.weights) + self.bias
         return self.activator(out)
     def train(self, input_vecs, labels, iteration, rate):
         '''
@@ -53,7 +48,7 @@ class Perceptron(object):
         # 变成[(x1,w1),(x2,w2),(x3,w3),...]
         # 然后利用感知器规则更新权重
         delta = label - output
-        self.weights += self.weights + delta*rate*input_vec.T
+        self.weights += self.weights + delta*rate*input_vec
         #self.weights = map(lambda x, w: w + rate * delta * x,zip(input_vec, self.weights))
         # 更新bias
         self.bias += rate *delta
@@ -69,7 +64,7 @@ def get_training_dataset():
     '''
     # 构建训练数据
     # 输入向量列表
-    input_vecs = np.array([[1,1], [0,0], [1,0], [0,1]])
+    input_vecs = (array([1,1]), array([0,1]), array([1,0]), array([0,0]))
     # 期望的输出列表，注意要与输入一一对应
     # [1,1] -> 1, [0,0] -> 0, [1,0] -> 0, [0,1] -> 0
     labels = [1,0,0,0]
