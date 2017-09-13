@@ -3,7 +3,7 @@ make notes for maching learning!
 
 ### 公开课程
 
-**Coursera — 机器学习（Machine Learning） **
+**Coursera — 机器学习（Machine Learning）**
 
 授课：Andrew Ng
 
